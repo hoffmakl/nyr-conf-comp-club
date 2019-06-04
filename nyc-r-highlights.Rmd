@@ -20,6 +20,8 @@ Videos of the talks should be out any day now (I had hoped they'd be out by toda
 Use `naniar::vis_miss` to visualize your missing data quickly. Returns a ggplot object so you can edit titles, colors, etc. if necessary. 
 
 ```{r}
+#install.packages("tidyverse")
+#install.packages("naniar")
 library(tidyverse)
 library(naniar)
 vis_miss(airquality) # a base R data set
@@ -31,6 +33,7 @@ vis_miss(airquality, cluster=T) + labs(title="Missingness in the airquality data
 A neat package for checking if and where differences in two data sets are occurring.
 
 ```{r}
+#install.packages("daff)
 library(daff)
 dat1 <- data.frame(A = c(1:3), B = c(T,F,T))
 dat2 <- data.frame(A = c(1:4), C = c("apple",NA,NA,"banana"))
@@ -44,6 +47,8 @@ I thought this would be useful for when you receive new data sets from investiga
 Noam Ross shared code for editable figures using David Gohel's `officer` and `rvg` packages. I've shared code for this before on our #r_stats slack channel after I saw him present it at an R-Ladies event in the fall, but [in case you missed it](https://github.com/hoffmakl/reporting/blob/master/vg.R).
 
 ```{r}
+#install.packages("rvg")
+#install.packages("officer")
 library(rvg)
 library(officer)
 
@@ -68,15 +73,18 @@ read_pptx() %>%
 
 Noam Ross also shared his new package, `redoc`, which allows you to reload an Rmd-generated word file back into R as a modified Rmd file.
 
-```{r}
-#remotes::install_github("noamross/redoc")
-```
-
 ![](redoc.png)
 
 
 This is part of his goal to decrease the pain of "the valley of heartbreak." ![](valleyofheartbreak.jpg)
 
+Installation command is:
+
+```{r}
+#remotes::install_github("noamross/redoc")
+```
+
+You may need to update several packages to get it to run correctly, but after that the main commands are just `redoc` and `dedoc`. [Let's look at a quick demo.](https://github.com/hoffmakl/nyr-conf-comp-club/blob/master/redoc_example.Rmd)
 
 # Pipelines in `drake`
 
@@ -105,7 +113,7 @@ When the talks are released, I'll make a post on slack, and when they are, I hig
 
 # A bonus!
 
-This was not from the New York R Conference but I saw it on [twitter](https://twitter.com/OppenheimerEvan/status/1132092898760114184) while making these slides and I just love it so much...
+This was not from the New York R Conference but I saw it on [Twitter](https://twitter.com/OppenheimerEvan/status/1132092898760114184) while making these slides and I just love it so much...
 
 ```{r}
 #install.packages("genius")
@@ -115,7 +123,7 @@ genius_lyrics("the beatles", "hey jude")
 
 # Takeaways
 
-- You can check out tweets from the conference by searching the hashtag #rstatsnyc
+- You can check out tweets from the conference by searching the hashtag #rstatsnyc on Twitter
 
 - You can find R-Ladies NYC meetups [here](https://www.meetup.com/rladies-newyork/)
 
